@@ -1,5 +1,3 @@
-
-
 describe("BMICalculator", function(){
   var calculator;
   var person;
@@ -11,6 +9,6 @@ describe("BMICalculator", function(){
 
   it ("calculates BMI for a person using metric method", function() {
     calculator.metric_bmi(person);
-    expect(person.bmivalue).toEqual(26.010);
+    expect(person.bmiValue).toEqual(26.010);
   });
 });

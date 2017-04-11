@@ -22,5 +22,5 @@ describe("Person", function() {
         person.calculate_bmi();
         expect(person.bmiMessage).toEqual("Overweight");
     });
-    
+
 });
