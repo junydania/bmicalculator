@@ -6,23 +6,24 @@
     <script src="src/person.js"></script>
     <script src="src/bmi_calculator.js"></script>
     <script src="lib/jquery.js"></script>
+
     <script>
       $(document).ready(function() {
         $('#calculate').click(function () {
           var w = parseFloat($('#weight').val());
-          var h = parseFloat($('height').val());
+          var h = parseFloat($('#height').val());
           var person = new Person({weight: w, height: h});
           person.calculate_bmi();
-          $(#'display_value').html('Your BMI is ' + person.bmivalue);
+          $('#display_value').html('Your BMI is ' + person.bmiValue);
           $('#display_message').html('and you are ' + person.bmiMessage);
         });
       });
-      
+
     </script>
   </head>
 
   <body>
-
+    <p id="test">working</p>
     <form>
       <input type="text" id="weight" placeholder="Weight">
       <input type="text" id="height" placeholder="Height">

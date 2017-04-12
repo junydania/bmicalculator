@@ -14,7 +14,7 @@ BMICalculator.prototype.metric_bmi = function(obj) {
 
 function setBMIMessage (obj) {
   if (obj.bmiValue < 18.5) {
-    obj.bmiMessage = "Underweight";
+    obj.bmiMessage = "underweight";
   }
 
   else if (obj.bmiValue > 18.5 && obj.bmiValue < 25){
@@ -22,10 +22,10 @@ function setBMIMessage (obj) {
   }
 
   else if(obj.bmiValue > 25 && obj.bmiValue < 30) {
-    obj.bmiMessage = "Overweight";
+    obj.bmiMessage = "overweight";
   }
   else if (obj.bmiValue > 30 && obj.bmiValue < 60) {
     obj.bmiMessage = "Obese";
   }
-  else { obj.bmiMessage = "You have exceeded obese and need to see a doctor";}
+  else { obj.bmiMessage = "above the weight of a normal human";}
 }

@@ -4,6 +4,7 @@ function Person(attr) {
 }
 
 Person.prototype.calculate_bmi = function() {
+  debugger;
   calculator = new BMICalculator();
   calculator.metric_bmi(this);
 };
