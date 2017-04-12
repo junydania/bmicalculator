@@ -10,7 +10,6 @@ describe('BMI_UI - index.html', function() {
   });
 
   it("displays BMI Value", function() {
-    expect($('#test').text()).toBe('working');
     expect($('#display_value').text()).toBe('Your BMI is 26.01');
   });
 
