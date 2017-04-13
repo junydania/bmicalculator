@@ -3,7 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>BMI Calculator</title>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" type="text/css" href="lib/style.css" />
+    <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="src/person.js"></script>
     <script type="text/javascript" src="src/bmi_calculator.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
@@ -34,8 +38,8 @@
               var person = new Person({weight: w, height:h});
               person.calculate_imperial_bmi();
               $('#siunit').remove()
-              $('#display_value').html('Your BMI is ' + person.bmiValue);
-              $('#display_message').html('Your BMI is ' + person.bmiMessage)
+              $('#display_value').html('Your BMI is ' + person.bmiValue).addClass('result');
+              $('#display_message').html('Your BMI is ' + person.bmiMessage).addClass('result');
             })
 
           }
@@ -47,27 +51,30 @@
 
   <body>
 
-  <div class="headercontainer" id="contain">
-    <div class="tag" id="calcheading"> BMI Calculator</div>
-    <img src="lib/images/health.jpg" />
-
+  <div class="headercontainer container-fluid" id="contain">
+    <div class="tag container-fluid" id="calcheading"> BMI Calculator</div>
+    <img class="img-responsive" src="lib/images/health.jpg" />
   </div>
 
-  <div id="calcbox">
+  <div id="calcbox" class="container-fluid">
 
     <form>
-      <input type ="checkbox" id="metricbmi" value = "Metric BMI" />
-      <label for="metricbmi"><span></span> Metric BMI</label>
+      <div class="form-group">
+        <input name="options" type ="checkbox" id="metricbmi" value = "Metric BMI" />
+        <label for="metricbmi"><span></span> Metric BMI</label>
 
-      <input type ="checkbox" id="imperialbmi" value = "Metric BMI" />
-      <label for="imperialbmi"><span></span>Imperial BMI</label>
+        <input name="options" type ="checkbox" id="imperialbmi" value = "Metric BMI" />
+        <label for="imperialbmi"><span></span>Imperial BMI</label>
 
-      <br />
-      <p id ="siunit"> </p>
+        <br />
+        <p id ="siunit"> </p>
 
-      <input type="text" id="weight" placeholder="Weight">
-      <input type="text" id="height" placeholder="Height">
-      <input type="button" id="calculate" value="Calculate">
+        <input type="text" id="weight" placeholder="Weight">
+        <input type="text" id="height" placeholder="Height">
+        <input type="button" id="calculate" value="Calculate">
+
+      </div>
+
     </form>
 
   </div>
