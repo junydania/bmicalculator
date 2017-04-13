@@ -1,3 +1,8 @@
+#contain {
+  background-image: url('images/health.jpeg');
+  -webkit-background-size: cover;
+
+}
 
 #calcbox {
 

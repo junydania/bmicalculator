@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>BMI Calculator</title>
+    <link rel="stylesheet" type="text/css" href="lib/style.css" />
     <script type="text/javascript" src="src/person.js"></script>
     <script type="text/javascript" src="src/bmi_calculator.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
@@ -42,9 +43,21 @@
 
   <body>
 
+  <div class="container" id="contain">
+
+    <!-- <img src="lib/images/health.jpg" /> -->
+
+  </div>
+
+  <div id="calcbox">
+
     <form>
-      <input type ="checkbox" id="metricbmi" value = "Metric BMI" />Metric BMI
-      <input type ="checkbox" id="imperialbmi" value = "Metric BMI" />Imperial BMI
+      <input type ="checkbox" id="metricbmi" value = "Metric BMI" />
+      <label for="metricbmi"><span></span> Metric BMI</label>
+
+      <input type ="checkbox" id="imperialbmi" value = "Metric BMI" />
+      <label for="imperialbmi"><span></span>Imperial BMI</label>
+
       <br />
       <p id ="siunit"> </p>
 
@@ -52,6 +65,9 @@
       <input type="text" id="height" placeholder="Height">
       <input type="button" id="calculate" value="Calculate">
     </form>
+
+  </div>
+
 
     <div>
       <span id="display_value"></span>
