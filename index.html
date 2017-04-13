@@ -8,34 +8,34 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
 
     <script type="text/javascript">
-
       $(document).ready(function() {
         var metric_bmi = $('#metricbmi');
         var imperial_bmi = $('#imperialbmi');
         $('input').on('click', function() {
-          if(metric_bmi.is(':checked')) {
-            $('#calculate').click(function (){
+          if(metric_bmi.is(':checked')){
+            $('#calculate').click(function() {
               var w = parseFloat($('#weight').val());
               var h = parseFloat($('#height').val());
-              var person = new Person({weight: w, height: h});
-              person.calculate_metricbmi();
+              var person = new Person({weight: w, height:h});
+              person.calculate_metric_bmi();
               $('#display_value').html('Your BMI is ' + person.bmiValue);
-              $('#display_message').html('and you are ' + person.bmiMessage);
-            });
-          } else(imperial_bmi.is(':checked'))
-              {
-                $('#calculate').click(function (){
-                $('#siunit').remove();
-                var w = parseFloat($('#weight').val());
-                var h = parseFloat($('#height').val());
-                var person = new Person({weight: w, height: h});
-                person.calculate_imperial_bmi();
-                $('#display_value').html('Your BMI is ' + person.bmiValue);
-                $('#display_message').html('and you are ' + person.bmiMessage);
-              });
-        };
-      });
-      });
+              $('#display_message').html('Your BMI is ' + person.bmiMessage)
+            })
+          } else if (imperial_bmi.is(':checked')) {
+            $('#siunit').html('Enter Weight in Pounds and Height in Inches');
+            $('#calculate').click(function() {
+              var w = parseFloat($('#weight').val());
+              var h = parseFloat($('#height').val());
+              var person = new Person({weight: w, height:h});
+              person.calculate_imperial_bmi();
+              $('#siunit').remove()
+              $('#display_value').html('Your BMI is ' + person.bmiValue);
+              $('#display_message').html('Your BMI is ' + person.bmiMessage)
+            })
+
+          }
+        })});
+
 
     </script>
   </head>
@@ -44,9 +44,9 @@
 
     <form>
       <input type ="checkbox" id="metricbmi" value = "Metric BMI" />Metric BMI
-      <input type ="checkbox" id="imperialbmi" value = "Imperial BMI" />Imperial BMI
+      <input type ="checkbox" id="imperialbmi" value = "Metric BMI" />Imperial BMI
       <br />
-      <p class="siunit"></p>
+      <p id ="siunit"> </p>
 
       <input type="text" id="weight" placeholder="Weight">
       <input type="text" id="height" placeholder="Height">
@@ -56,6 +56,7 @@
     <div>
       <span id="display_value"></span>
       <span id="display_message"></span>
+
     </div>
   </body>
 </html>
