@@ -2,9 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-
     <title>BMI Calculator</title>
-    <link type="text/css" rel="stylesheet" href="/lib/style.css" />
     <script type="text/javascript" src="src/person.js"></script>
     <script type="text/javascript" src="src/bmi_calculator.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
@@ -12,65 +10,52 @@
     <script type="text/javascript">
 
       $(document).ready(function() {
-
-        var metricbox = $('#metric_bmi');
-        var imperialbox = $('#imperial_bmi');
-        var checkboxes = $('input:checkbox:checked');
-
-        $('input').on('click', function(){
-          if(metricbox.is(':checked')){
-              $('#calculate').click(function () {
+        var metric_bmi = $('#metricbmi');
+        var imperial_bmi = $('#imperialbmi');
+        $('input').on('click', function() {
+          if(metric_bmi.is(':checked')) {
+            $('#calculate').click(function (){
               var w = parseFloat($('#weight').val());
               var h = parseFloat($('#height').val());
               var person = new Person({weight: w, height: h});
-              person.calculate_metric_bmi();
+              person.calculate_metricbmi();
               $('#display_value').html('Your BMI is ' + person.bmiValue);
               $('#display_message').html('and you are ' + person.bmiMessage);
-            })
-          }
-          else if(imperialbox.is(':checked')){
-                  $('#calculate').click(function () {
-                  var w = parseFloat($('#weight').val());
-                  var h = parseFloat($('#height').val());
-                  var person = new Person({weight: w, height: h});
-                  person.calculate_imperial_bmi();
-                  $('#display_value').html('Your BMI is ' + person.bmiValue);
-                  $('#display_message').html('and you are ' + person.bmiMessage);
-
-                  });
-          }
-        })}
-      );
-
+            });
+          } else(imperial_bmi.is(':checked'))
+              {
+                $('#calculate').click(function (){
+                $('#siunit').remove();
+                var w = parseFloat($('#weight').val());
+                var h = parseFloat($('#height').val());
+                var person = new Person({weight: w, height: h});
+                person.calculate_imperial_bmi();
+                $('#display_value').html('Your BMI is ' + person.bmiValue);
+                $('#display_message').html('and you are ' + person.bmiMessage);
+              });
+        };
+      });
+      });
 
     </script>
   </head>
 
-<body>
-
-  <div>
+  <body>
 
     <form>
-
-      <input type ="checkbox" id="metric_bmi" name="metricbmi" value = "Metric BMI" />Metric BMI
-
-      <input type ="checkbox" id="imperial_bmi" name="imperialbmi" value = "Imperial BMI" />Imperial BMI
+      <input type ="checkbox" id="metricbmi" value = "Metric BMI" />Metric BMI
+      <input type ="checkbox" id="imperialbmi" value = "Imperial BMI" />Imperial BMI
       <br />
+      <p class="siunit"></p>
 
       <input type="text" id="weight" placeholder="Weight">
       <input type="text" id="height" placeholder="Height">
       <input type="button" id="calculate" value="Calculate">
     </form>
 
-  </div>
-
-  <br/>
-
-  <div>
+    <div>
       <span id="display_value"></span>
       <span id="display_message"></span>
-  </div>
-
+    </div>
   </body>
-
 </html>

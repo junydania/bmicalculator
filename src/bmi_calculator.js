@@ -13,11 +13,11 @@ BMICalculator.prototype.metric_bmi = function(obj) {
 };
 
 BMICalculator.prototype.imperial_bmi = function(obj) {
-  var weight = obj.weight ;
-  var height = obj.height ;
+  var weight = obj.weight;
+  var height = obj.height;
 
   if (weight > 0 && height > 0) {
-    var finalBMI = (weight * 703) / (height * height );
+    var finalBMI = (weight * 703) / (height  * height );
     obj.bmiValue = parseFloat(finalBMI.toFixed(2));
     setBMIMessage(obj);
   }
@@ -39,5 +39,5 @@ function setBMIMessage (obj) {
   else if (obj.bmiValue > 30 && obj.bmiValue < 60) {
     obj.bmiMessage = "Obese";
   }
-  else { obj.bmiMessage = "above the weight of a normal human";}
+  else { obj.bmiMessage = "above the weight of a normal human"};
 }

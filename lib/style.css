@@ -1,0 +1,123 @@
+
+#calcbox {
+
+    border-style: solid;
+    background-color: green;
+    padding-top: 20px;
+    padding-bottom: 70px;
+
+
+}
+
+#test {
+
+    color: red;
+}
+
+#contain {
+    position: relative;
+    border-image-width: auto;
+}
+
+#calcheading {
+    float: center;
+    position: relative;
+    z-index: 1000;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration-style: solid;
+    font-size: 40px;
+    font-weight: bold;
+    border-radius: 20px;
+    border-style: solid;
+    margin-left: 350px;
+    margin-right: 350px;
+    background-color: green
+}
+
+#weight {
+    margin-left: 75px;
+    height: 35px;
+    width: 180px;
+    margin-top: 5px;
+    font-size: 25px
+}
+
+#height {
+    margin-left: 30px;
+    height: 35px;
+    width: 180px;
+    margin-top: 5px;
+    font-size: 25px
+
+}
+
+.checkbox{
+    padding-left: 80px;
+    font-size: 25px;
+}
+
+#imperial_bmi {
+    padding-left: 20px;
+}
+
+
+input[type="checkbox"] {
+    display:none;
+}
+
+input[type="checkbox"] + label {
+    color:#f2f2f2;
+}
+
+input[type="checkbox"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-2px 10px 0 30px;
+    vertical-align:middle;
+    background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) left top no-repeat;
+    cursor:pointer;
+}
+
+input[type="checkbox"]:checked + label span {
+    background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) -19px top no-repeat;
+}
+
+#calculate {
+  display: inline-block;
+  margin-left: 25px;
+  padding: 15px 25px 20px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: purple;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+#calculate:hover {background-color: #3e8e41}
+
+#calculate:active {
+  background-color: blue;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#siunit{
+  text-decoration-color: white;
+}
+
+.siunit {
+  color:  white;
+  font-size: 20px;
+}
+
+.result {
+  font-size: 50px;
+  font-weight: bold;
+}
