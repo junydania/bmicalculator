@@ -27,7 +27,7 @@
               person.calculate_metric_bmi();
               $('#siunit').remove();
               $('#display_value').html('Your BMI is ' + person.bmiValue).addClass('result');
-              $('#display_message').html('Your BMI is ' + person.bmiMessage).addClass('result');
+              $('#display_message').html('and you are ' + person.bmiMessage).addClass('result');
             })
           } else if (imperial_bmi.is(':checked')) {
             $('#siunit').html('Enter Weight in Pounds and Height in Inches')
