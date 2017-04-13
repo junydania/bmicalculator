@@ -1,6 +1,8 @@
 #contain {
-  background-image: url('images/health.jpeg');
+  background-image: url("images/health.jpg");
   -webkit-background-size: cover;
+  position: relative;
+  border-image-width: auto;
 
 }
 
@@ -10,18 +12,11 @@
     background-color: green;
     padding-top: 20px;
     padding-bottom: 70px;
-
-
 }
 
 #test {
 
     color: red;
-}
-
-#contain {
-    position: relative;
-    border-image-width: auto;
 }
 
 #calcheading {
@@ -37,11 +32,14 @@
     border-style: solid;
     margin-left: 350px;
     margin-right: 350px;
-    background-color: green
+    background-color: green;
+    padding-left: 20px;
+    padding-right: 20px;
+    top: 10px;
 }
 
 #weight {
-    margin-left: 75px;
+    margin-left: 70px;
     height: 35px;
     width: 180px;
     margin-top: 5px;
@@ -79,7 +77,7 @@ input[type="checkbox"] + label span {
     display:inline-block;
     width:19px;
     height:19px;
-    margin:-2px 10px 0 30px;
+    margin:-2px 5px 0 70px;
     vertical-align:middle;
     background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) left top no-repeat;
     cursor:pointer;
@@ -113,16 +111,24 @@ input[type="checkbox"]:checked + label span {
   transform: translateY(4px);
 }
 
-#siunit{
-  text-decoration-color: white;
-}
-
 .siunit {
   color:  white;
   font-size: 20px;
+  margin-left: 70px
 }
 
 .result {
-  font-size: 50px;
+  font-size: 30px;
   font-weight: bold;
+}
+
+.headercontainer {
+  border: 1px solid;
+  position: relative
+}
+
+.tag {
+  float: left;
+  position: absolute;
+  z-index: 1000;
 }

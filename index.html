@@ -14,16 +14,20 @@
         var imperial_bmi = $('#imperialbmi');
         $('input').on('click', function() {
           if(metric_bmi.is(':checked')){
+            $('#siunit').html('Enter Weight in Kilogram and Height in Centimeters')
+            .addClass('siunit')
             $('#calculate').click(function() {
               var w = parseFloat($('#weight').val());
               var h = parseFloat($('#height').val());
               var person = new Person({weight: w, height:h});
               person.calculate_metric_bmi();
-              $('#display_value').html('Your BMI is ' + person.bmiValue);
-              $('#display_message').html('Your BMI is ' + person.bmiMessage)
+              $('#siunit').remove();
+              $('#display_value').html('Your BMI is ' + person.bmiValue).addClass('result');
+              $('#display_message').html('Your BMI is ' + person.bmiMessage).addClass('result');
             })
           } else if (imperial_bmi.is(':checked')) {
-            $('#siunit').html('Enter Weight in Pounds and Height in Inches');
+            $('#siunit').html('Enter Weight in Pounds and Height in Inches')
+            .addClass('siunit');
             $('#calculate').click(function() {
               var w = parseFloat($('#weight').val());
               var h = parseFloat($('#height').val());
@@ -43,9 +47,9 @@
 
   <body>
 
-  <div class="container" id="contain">
-
-    <!-- <img src="lib/images/health.jpg" /> -->
+  <div class="headercontainer" id="contain">
+    <div class="tag" id="calcheading"> BMI Calculator</div>
+    <img src="lib/images/health.jpg" />
 
   </div>
 
